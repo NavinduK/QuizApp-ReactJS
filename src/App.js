@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import firebase from "./firebase";
+import Questions from "./components/Questions";
 
-function App() {
+const App = () => {
+  const [quiz, setQuiz] = useState([]);
+  const [user, setUser] = useState([]);
+  //const [answer, setAnswer] = useState([]);
+  
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+      const db = firebase.firestore();
+      const quizData = await db.collection("quiz").get();
+      const userData = await db.collection("users").get();
+      setQuiz(quizData.docs.map((doc) => doc.data()));
+      setUser(userData.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Questions quiz={quiz}/>
     </div>
   );
 }
