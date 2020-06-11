@@ -61,7 +61,7 @@ body :-ms-input-placeholder {
 }
 
 .quiz-container {
-  margin-top: 25vh;
+  margin-top: 17vh;
   display: flex;
   width: 100vw;
   justify-content: center;
@@ -356,4 +356,42 @@ form button:hover {
   animation-duration: 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+
+.score-container{
+  color: #3bade3;
+  text-align: center;
+  justify-content: center;
+}
+
+.btn3{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  background: linear-gradient(45deg, #9844b7 0%, #576fe6 25%, #ff357f 51%, #3bade3 100%);
+  background-size: 400%;
+  border: 0;
+  padding: 10px 15px;
+  color: #130218;
+  border-radius: 3px;
+  width: 250px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 18px;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+}
+.btn3:hover {
+  animation-name: gradient;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.result-container{
+  margin-top: 35vh;
+  margin-left: 40vw;
+  width: 18vw;
+  justify-content: center;
 }

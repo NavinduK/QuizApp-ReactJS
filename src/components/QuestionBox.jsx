@@ -1,16 +1,16 @@
 import React from 'react';
 
-const QuestionBox = ({currentQuestion,answerSet,startQuiz,setNextQuestion,startHide,startShow}) => {
+const QuestionBox = ({currentQuestion,answerSet,startQuiz,setNextQuestion,startDisplay,quesDisplay}) => {
 
     return (
         <div>
-            <div className={startHide}>
+            <div className={startDisplay}>
                 <div className="button-container">
                     <button className="btn1" onClick={startQuiz}><span>Start</span> </button>
                 </div>
                 
             </div>
-            <div style={{display: 'none'}} className={startShow} id="questionBox">
+            <div style={{display: 'none'}} className={quesDisplay} id="questionBox">
                 <div className="quiz-container">
                     <div>
                         <div className="question">

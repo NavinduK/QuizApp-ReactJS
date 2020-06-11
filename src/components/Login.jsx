@@ -24,7 +24,7 @@ const Login = ({ history }) => {
   const { currentUser } = useContext(AuthContext);
 
   if (currentUser) {
-    console.log(currentUser);
+    //console.log(currentUser);
     localStorage.setItem("logUserId", currentUser.uid);
     localStorage.setItem("logUserName", currentUser.email);
     return <Redirect to="/" currentUser={currentUser} />;
